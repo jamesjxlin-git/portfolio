@@ -151,15 +151,6 @@
         </div>
       </div>
 
-      <div class="connect bleed" id="connect">
-        <h2>Feel free to connect with me!</h2>
-        <div class="connect-links">
-          <button class="pill" type="button" data-copy="${esc(S.contact.email)}" data-label="Copy" aria-label="Copy email address ${esc(S.contact.email)}">${mail}<span>${esc(S.contact.email)}</span><span class="pill-tip" data-tip>Copy</span></button>
-          <a class="pill" href="${esc(S.contact.linkedin)}" target="_blank" rel="noopener">${liIcon}<span>LinkedIn</span>${arrowUR}</a>
-          <a class="pill" href="${esc(S.contact.github)}" target="_blank" rel="noopener">${ghIcon}<span>GitHub</span>${arrowUR}</a>
-        </div>
-      </div>
-
       <section class="block" id="about" aria-labelledby="h-about">
         <div class="sec-head"><div class="mono"><span>About</span><span>${esc(S.location)}</span></div><h2 id="h-about">${esc(S.about.heading)}</h2></div>
         <div class="split">
@@ -267,7 +258,7 @@
       </section>
 
       <section class="contact" id="contact" aria-labelledby="h-ct">
-        <h2 id="h-ct">Thanks for stopping by!</h2>
+        <span class="mono contact-kicker">Thanks for stopping by</span><h2 id="h-ct">Feel free to connect with me!</h2>
         <div class="contact-row">
           <div><span class="mono muted">Email</span><span class="val" id="email-val">${esc(S.contact.email)}</span><button class="copy" type="button" data-copy="${esc(S.contact.email)}" data-label="Copy email">Copy email</button></div>
           <div><span class="mono muted">LinkedIn</span><span class="val"><a href="${esc(S.contact.linkedin)}" target="_blank" rel="noopener">in/jamesjxlin</a></span></div>

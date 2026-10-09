@@ -1,20 +1,22 @@
 /* Layout concept: a warm greige studio wall. Hairline-ruled meta rows (4-col grid) frame oversized
    grotesk type; soft clay objects (sphere, ribbed pedestal, capsule) act as imagery. One orange accent. */
 :root {
-  --bg: #e6dcd2;          /* greige wall */
-  --bg-2: #ddd1c5;        /* deeper band / tiles */
-  --bg-3: #d3c5b7;        /* floor shadow tone */
-  --ink: #141210;         /* near-black, warm */
-  --muted: #5d544c;       /* secondary text (4.9:1 on --bg) */
-  --rule: rgba(20, 18, 16, .26);
-  --accent: #e8892f;      /* the small orange ball */
-  --accent-ink: #9a4b10;  /* accent as text */
-  --clay-hi: #fbf8f4;
-  --clay-mid: #e4dcd3;
-  --clay-lo: #a89a8c;
-  --shadow: rgba(60, 44, 30, .28);
-  --chip: rgba(20, 18, 16, .06);
+  /* single dark theme: warm charcoal wall, cream ink, one orange accent */
+  --bg: #1a1815;          /* warm charcoal */
+  --bg-2: #22201c;        /* raised band / tiles */
+  --bg-3: #2e2a25;        /* floor glow tone */
+  --ink: #efe8df;         /* cream text */
+  --muted: #aca196;       /* secondary text */
+  --rule: rgba(239, 232, 223, .2);
+  --accent: #f0a043;      /* the small orange ball */
+  --accent-ink: #f3b26a;  /* accent as text */
+  --clay-hi: #e6ddd2;     /* clay objects toned to sit in the dark palette */
+  --clay-mid: #b3a698;
+  --clay-lo: #574e45;
+  --shadow: rgba(0, 0, 0, .55);
+  --chip: rgba(239, 232, 223, .08);
   --plate: #ffffff; --plate-ink: #2a2520;
+  color-scheme: dark;
   /* slide “paper” – documents stay light in both themes */
   --s-bg: #fcfbf9; --s-ink: #1b1916; --s-mute: #6b625a; --s-rule: #d9d1c8; --s-soft: #f1ece6;
   --s-acc: #d9782a; --s-clay: #a39181; --s-good: #4e7a5c; --s-warn: #c99a2e; --s-bad: #b4513d;
@@ -24,27 +26,12 @@
   --f-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
   --gutter: clamp(16px, 3.2vw, 44px);
-  --t-xs: 11px; --t-s: 13px; --t-m: 16px; --t-l: 19px;
-  --t-h3: clamp(22px, 2.2vw, 28px);
+  --t-xs: 12.5px; --t-s: 14px; --t-m: 16.5px; --t-l: 20px;
+  --t-h3: clamp(24px, 2.4vw, 32px);
   --t-h2: clamp(36px, 5.4vw, 76px);
   --t-hero: clamp(64px, 12vw, 200px);
   --ease: cubic-bezier(.2, .7, .1, 1);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1a1815; --bg-2: #22201c; --bg-3: #2c2924; --ink: #efe8df; --muted: #a99e93;
-    --rule: rgba(239, 232, 223, .2); --accent: #f0a043; --accent-ink: #f3b26a;
-    --clay-hi: #efe9e2; --clay-mid: #bdb2a6; --clay-lo: #5f564d; --shadow: rgba(0, 0, 0, .55);
-    --chip: rgba(239, 232, 223, .08); color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #1a1815; --bg-2: #22201c; --bg-3: #2c2924; --ink: #efe8df; --muted: #a99e93;
-  --rule: rgba(239, 232, 223, .2); --accent: #f0a043; --accent-ink: #f3b26a;
-  --clay-hi: #efe9e2; --clay-mid: #bdb2a6; --clay-lo: #5f564d; --shadow: rgba(0, 0, 0, .55);
-  --chip: rgba(239, 232, 223, .08); color-scheme: dark;
-}
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 body {
@@ -434,3 +421,21 @@ dialog.lb button { font: inherit; color: #efe8df; background: transparent; borde
 .story-head { border-top: 0; padding-top: clamp(28px, 4vw, 52px); }
 
 .skills-icon { width: clamp(120px, 11vw, 160px); }
+
+/* ---------- v6: dark-only, bigger education logos, readable type ---------- */
+.edu-side { display: grid; gap: 12px; align-content: start; }
+.edu-side .logo-tile { width: 100%; max-width: 320px; aspect-ratio: 4 / 3; border-radius: 6px; }
+.edu-side .logo-tile img { left: 14%; top: 14%; width: 72%; height: 72%; }
+.edu-when { font-size: var(--t-xs); }
+.edu-when b { font-size: 14px; }
+.edu-main h3 { font-size: var(--t-h3); }
+.edu-main .deg { font-size: 17px; gap: 4px; }
+.edu-main dl { font-size: 16px; gap: 16px; }
+.edu-main dt, .facts h3, .mono { font-size: var(--t-xs); }
+.facts ul { font-size: 16px; }
+.cw-list li { font-size: 16px; }
+.theme ul, .proj p, .note { font-size: 16px; }
+.xp-meta { font-size: var(--t-s); }
+.contact-kicker { display: block; margin-bottom: 18px; color: var(--accent-ink); }
+@media (max-width: 820px) { .edu-side { flex-direction: column; } .edu-side .logo-tile { max-width: 280px; } }
+.edu-main dl { align-content: start; }
